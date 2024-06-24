@@ -1,4 +1,12 @@
 import streamlit as st
+import sys
+import pkg_resources
+
+st.write("Python version:", sys.version)
+st.write("Installed packages:")
+installed_packages = [f"{pkg.key}=={pkg.version}" for pkg in pkg_resources.working_set]
+st.write("\n".join(installed_packages))
+
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
